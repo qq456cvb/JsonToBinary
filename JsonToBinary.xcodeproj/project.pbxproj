@@ -13,8 +13,8 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		9FB95CF71DDA3DA20041DC8D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			buildActionMask = 8;
+			dstPath = usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		9FB95CF91DDA3DA20041DC8D /* JsonToBinary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JsonToBinary; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB95CFC1DDA3DA20041DC8D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9FB95D031DDA3E140041DC8D /* yolo_tiny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yolo_tiny.json; sourceTree = SOURCE_ROOT; };
+		9FB95D051DDA43E70041DC8D /* JsonToBinary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JsonToBinary-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FB95D091DDA52400041DC8D /* naive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = naive.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			children = (
 				9FB95CFB1DDA3DA20041DC8D /* JsonToBinary */,
 				9FB95CFA1DDA3DA20041DC8D /* Products */,
+				9FB95D051DDA43E70041DC8D /* JsonToBinary-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +61,8 @@
 		9FB95CFB1DDA3DA20041DC8D /* JsonToBinary */ = {
 			isa = PBXGroup;
 			children = (
+				9FB95D091DDA52400041DC8D /* naive.json */,
+				9FB95D031DDA3E140041DC8D /* yolo_tiny.json */,
 				9FB95CFC1DDA3DA20041DC8D /* main.swift */,
 			);
 			path = JsonToBinary;
@@ -94,6 +100,7 @@
 				TargetAttributes = {
 					9FB95CF81DDA3DA20041DC8D = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -218,7 +225,11 @@
 		9FB95D011DDA3DA20041DC8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JsonToBinary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -226,7 +237,10 @@
 		9FB95D021DDA3DA20041DC8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JsonToBinary-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -250,6 +264,7 @@
 				9FB95D021DDA3DA20041DC8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
